@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Body Section -->
+
+    <div class="flex items-center justify-center bg-[#394764] w-full h-screen">
+      <div class="flex flex-col items-center">
+        <div class="w-full">
+          <h2>Calculator</h2>
+          <input
+            type="text"
+            id="display"
+            readonly
+            class="bg-[#191f32] px-6 py-4 text-5xl font-bold text-[#fdffff] w-full rounded-xl"
+          />
+        </div>
+        <div
+          class="grid grid-cols-4 font-bold font-poppins text-3xl my-4 p-4 bg-[#252d44] rounded-md gap-4 w-full"
+        >
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.clear()"
+          >
+            C
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.operation('/')"
+          >
+            ÷
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.operation('*')"
+          >
+            ×
+          </button>
+          <button
+            class="bg-[#f98481] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#c45650] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+          >
+            DEL
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(7)"
+          >
+            7
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(8)"
+          >
+            8
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(9)"
+          >
+            9
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.operation('-')"
+          >
+            -
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(4)"
+          >
+            4
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(5)"
+          >
+            5
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(6)"
+          >
+            6
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.operation('+')"
+          >
+            +
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(1)"
+          >
+            1
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(2)"
+          >
+            2
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(3)"
+          >
+            3
+          </button>
+          <button
+            class="bg-[#a9e5bb] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#6c9a7d] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.calculate()"
+          >
+            =
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(0)"
+          >
+            %
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.appendNumber(0)"
+          >
+            0
+          </button>
+          <button
+            class="bg-[#e9e4da] text-[#252d44] rounded-md px-2 py-3 shadow-[0px_5px_0px_0px_#b4aa9f] hover:shadow-none hover:translate-y-1 hover:transition-all duration-150"
+            onclick="calculator.dot()"
+          >
+            .
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Script Section -->
+
+    <script>
+      // Calculator object
+      const calculator = {
+        display: document.getElementById("display"),
+        currentInput: "",
+        operator: "",
+        result: null,
+
+        appendNumber: function (number) {
+          this.currentInput += number;
+          this.display.value = this.currentInput;
+        },
+
+        operation: function (operator) {
+          this.operator = operator;
+          if (this.result === null) {
+            this.result = parseFloat(this.currentInput);
+          } else {
+            this.calculate();
+          }
+          this.currentInput = "";
+        },
+
+        calculate: function () {
+          const input = parseFloat(this.currentInput);
+          switch (this.operator) {
+            case "+":
+              this.result += input;
+              break;
+            case "-":
+              this.result -= input;
+              break;
+            case "*":
+              this.result *= input;
+              break;
+            case "/":
+              this.result /= input;
+              break;
+          }
+          this.display.value = this.result;
+          this.currentInput = "";
+        },
+
+        dot: function () {
+          if (this.currentInput.indexOf(".") === -1) {
+            this.currentInput += ".";
+            this.display.value = this.currentInput;
+          }
+        },
+
+        clear: function () {
+          this.currentInput = "";
+          this.operator = "";
+          this.result = null;
+          this.display.value = "";
+        },
+      };
+    </script>
+  </body>
+</html>
